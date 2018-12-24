@@ -5,5 +5,15 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def index(request):
-    return render(request, 'index.html', {'say': 'hellooo human', 'title': 'Mi titulo'})
+
+def index(request, username="By asiesps"):
+    response = {}
+    response['say'] = 'hellooo human'
+    response['title'] = 'Mi titulo'
+    response['username'] = username
+    return render(request, 'index.html', response )
+
+
+def fake(request):
+        
+    return render(request, 'fake.html' )

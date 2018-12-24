@@ -1,0 +1,16 @@
+<!-- Para traer de otro archivo -->
+{% extends 'base_generic.html' %}
+
+<!-- Para escribir la variable en otro archivo -- osea pasarlo-->
+{% block title %}
+    Fake
+{%endblock%}
+
+{% block content %}
+{% comment %} 
+Para hacer una referencia a name=index configurada en urls 
+, mas un parametro por defecto 
+
+{% endcomment %}
+    <a href="{% url 'news:index' 'UserDafult' %}"> Click me reference URL </a>
+{%endblock%}
