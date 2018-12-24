@@ -1,0 +1,11 @@
+<!-- Para traer de otro archivo -->
+{% extends 'base_generic.html' %}
+
+<!-- Para escribir la variable en otro archivo -- osea pasarlo-->
+{% block title %}
+    {{title|title}}
+{%endblock%}
+
+{% block content %}
+    <h2> {{say|title}} </h2>
+{%endblock%}
