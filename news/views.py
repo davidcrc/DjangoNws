@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
 
 from models import Post
 # Create your views here.
@@ -38,5 +39,13 @@ from models import Post
 #         return context
 
 class IndexListView(ListView):
+    # Obtiene un nobre por defecto -> Class_datail.html
     model = Post
     ordering = ['-create_at']
+
+
+class PostDetailView(DetailView):
+    model = Post
+
+    # Si queremos asignar un nombre manual, en vez del por defecto post_detail 
+    # template_name = 'unNombre.html'

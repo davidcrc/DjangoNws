@@ -1,0 +1,36 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+
+{% block cssfiles %}
+<link rel="stylesheet" href="{% static 'news/css/detail.css'%}">
+{% endblock %}
+
+{% block jsfiles %}
+<script type="text/javascript" src="{% static 'news/js/detail.js'%}"></script>
+{%endblock%}
+
+
+{% block title %} {{post.title}} {% endblock %}
+
+
+{% block content %}
+
+<section class="demo-2">
+    <div id="container" class="container intro-effect-fadeout">
+        <!-- Top Navigation -->
+        <header class="header">
+            <div class="bg-img"><img src="https://images.unsplash.com/photo-1425678013935-cafcfb4272c7?dpr=1&auto=format&fit=crop&w=1500&h=994&q=80&cs=tinysrgb&crop="
+                    class="img-responsive" alt="Background Image" /></div>
+            <div class="title">
+                <h1>{{post.title}}</h1>
+                <p>by <strong>{{post.author}}</strong> &#8212; Posted on <strong>{{post.create_at|date}}</strong></p>
+            </div>
+        </header>
+        <article class="content">
+            <div>
+                {{post.body|safe}}
+            </div>
+        </article>
+    </div>
+</section>
+{% endblock %}

@@ -23,7 +23,7 @@
                 </figure>
                 <figcaption>
                     <button class="btn"> <span>+</span> </button>
-                    <h2> {{post.title|truncatechars:25}} </h2>
+                    <h2> <a href=" {% url 'news:post_detail' post.id %} "> {{post.title|truncatechars:25}} </a></h2>
                     {{post.body|safe|truncatechars:232}}
                 </figcaption>
             </div>
