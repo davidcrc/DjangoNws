@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # url(r'^index/', views.index),
-    url(r'^news/', include('news.urls', namespace="news")),   # asi mejor pa que sea modular y lo busque en ese paquete
+    url(r'^', include('news.urls', namespace="news")),   # asi mejor pa que sea modular y lo busque en ese paquete
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
