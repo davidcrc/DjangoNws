@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-# from news import views      # traer la url que creamos
+from django.conf import settings
+from django.conf.urls.static import static
+# from news import views      # traer la url que creamos, ya no usada
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # url(r'^index/', views.index),
     url(r'^news/', include('news.urls', namespace="news")),   # asi mejor pa que sea modular y lo busque en ese paquete
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -109,3 +109,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+# Ordenando carpetas para guardar archivos y quede ordenando
+MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'static', 'media')
+STATIC_ROOT = os.path.join(os.path.dirname(__file__), 'static', 'static-onli')

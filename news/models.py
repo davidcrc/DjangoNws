@@ -20,7 +20,7 @@ class Post(models.Model):
     update_at = models.DateTimeField(auto_now=False, auto_now_add=True, null = True )
 
     def image_tag(self):
-        return format_html( "<image src='{}' />".format(self.image.url))
+        return format_html( "<image src='{}' style='height:140px'/>".format(self.image.url))
 
 class Author(models.Model):
     '''
