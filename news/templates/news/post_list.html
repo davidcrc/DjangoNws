@@ -1,0 +1,33 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+
+{% block cssfiles %}  
+    <link rel="stylesheet" type="text/css" href="{% static 'news/css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'news/css/bootstrap.min.css' %}">
+{% endblock %}
+
+{% block jsfiles %}  
+    <script  type="text/javascript" src="{% static 'news/js/bootstrap.min.js' %}"> </script>
+    
+{% endblock %}
+
+{% block title %} Index {% endblock %}
+
+{% block content %}
+
+    {% for post in object_list %}
+        <div class="col-md-4">
+            <div class="notice-card">
+                <figure>
+                    <img src="https://placeimg.com/400/200/tech" alt="">
+                </figure>
+                <figcaption>
+                    <button class="btn"> <span>+</span> </button>
+                    <h2> {{post.title|truncatechars:25}} </h2>
+                    {{post.body|safe|truncatechars:232}}
+                </figcaption>
+            </div>
+        </div>
+    {% endfor %}
+
+{% endblock %}

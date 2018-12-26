@@ -3,6 +3,9 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 from django.views.generic import TemplateView
+from django.views.generic.list import ListView
+
+from models import Post
 # Create your views here.
 
 
@@ -19,17 +22,21 @@ from django.views.generic import TemplateView
 #     return render(request, 'fake.html' )
 
 # Podemos extender de templateView y modificarlo para que reciba diferentes datos o variables
-class IndexNew(TemplateView):
-    template_name = 'index.html'
+# class IndexNew(TemplateView):
+#     template_name = 'index.html'
 
-    def get_context_data(self, username, **kwargs):
-        context = super(IndexNew, self).get_context_data(**kwargs)
+#     def get_context_data(self, username, **kwargs):
+#         context = super(IndexNew, self).get_context_data(**kwargs)
 
-        response = {}
-        response['say'] = 'hellooo human'
-        response['title'] = 'Mi titulo'
-        response['username'] = username
+#         response = {}
+#         response['say'] = 'hellooo human'
+#         response['title'] = 'Mi titulo'
+#         response['username'] = username
 
-        context.update(response)
+#         context.update(response)
 
-        return context
+#         return context
+
+class IndexListView(ListView):
+    model = Post
+    ordering = ['-create_at']

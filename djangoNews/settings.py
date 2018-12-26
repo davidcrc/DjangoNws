@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'news',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -114,3 +115,6 @@ MEDIA_URL = '/media/'
 # Ordenando carpetas para guardar archivos y quede ordenando
 MEDIA_ROOT = os.path.join(os.path.dirname(__file__), 'static', 'media')
 STATIC_ROOT = os.path.join(os.path.dirname(__file__), 'static', 'static-onli')
+
+# guardar los archivos del ckeditor
+CKEDITOR_UPLOAD_PATH = "/ckeditor_image/"
